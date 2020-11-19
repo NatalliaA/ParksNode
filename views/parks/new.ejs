@@ -1,0 +1,60 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="row mt-5">
+   
+  <div class="col-lg-6 offset-lg-3">
+      <div class='card shadow'>
+        <div class='card-body'>
+          <h2 class="text-center">Add a New Park</h2>
+
+<form action='/parks' class='needs-validation' method='POST' novalidate enctype='multipart/form-data'>
+    <div class='mb-3'>
+    <label class='form-label' for='title'>Title</label>
+    <input class='form-control' type='text' id='title' name='park[title]' autofocus required>
+    <div class='valid-feedback'>Looks good!</div>
+    <div class="invalid-feedback">Please add a title.</div>
+    </div>
+    <div class='mb-3'>
+    <label class='form-label' for='location'>Location</label>
+    <input class='form-control' type='text' id='location' name='park[location]'
+    placeholder='e.g. Boulder, Colorado' required>
+    <div class='valid-feedback'>Looks good!</div>
+    <div class="invalid-feedback">Please add a location.</div>
+    </div>
+      <div class='mb-3'>
+        <label class='form-label' for='price'>Price per night</label>
+        <div class="input-group">
+        <span class="input-group-text" id="price-label">$</span>
+        <input id="price" type="number" class="form-control" name='park[price]'
+         placeholder='0.00' aria-label="price" aria-describedby="price-label" required>
+         <div class='valid-feedback'>Looks good!</div>
+        <div class="invalid-feedback">Please add a price.</div>
+      </div>
+      </div>
+
+    <div class='mb-3'>
+    <label class='form-label' for='description'>Description</label>
+    <textarea class='form-control' rows='5' type='text' id='description' name='park[description]' required></textarea>
+    <div class='valid-feedback'>Looks good!</div>
+    <div class="invalid-feedback">Please add a description.</div>          
+    </div>
+    
+    <div class="mb-4">
+        <label for="image" class="form-label">Choose Image(s)</label>
+        <input class="form-control" type="file" id="image" name='image' multiple required>  
+        <div class='valid-feedback'>Looks good!</div>
+    <div class="invalid-feedback">Please add at least one image.</div>         
+      </div>     
+    
+    <div class='mb-3'>
+        <button class='btn btn-primary btn-block'>Submit</button>
+    </div>
+</form>
+</div>
+</div>
+<div class='mb-3 mt-3'>
+<a href='/parks'>All Parks</a>
+</div>
+</div>
+</div>
+
